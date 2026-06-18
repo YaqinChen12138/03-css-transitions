@@ -19,6 +19,12 @@ h1 {
   text-align: center;
 }
 
+h1:hover {
+  /* Smooth heading size change when hovered */
+  transition: font-size 0.5s ease-in-out;
+  font-size: 60px;
+}
+
 .description {
   font-size: 18px;
   text-align: center;
@@ -47,6 +53,13 @@ h1 {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   outline: 2px solid #775047;
+  /* Smooth scale effect for hover and keyboard focus */
+  transition: transform 0.3s ease;
+}
+
+.card:hover,
+.card:focus {
+  transform: scale(1.03);
 }
 
 /* Card image style */
@@ -65,5 +78,13 @@ h1 {
   right: 0;
   background: rgba(62, 39, 35, 0.85);  /* Warm dark overlay */
   color: #FDF6E3;  /* Light text for contrast */
+  opacity: 0;
   padding: 0 12px;
+  /* Fade in text overlay smoothly on hover or focus */
+  transition: opacity 0.4s ease;
+}
+
+.card:hover .card-text,
+.card:focus .card-text {
+  opacity: 1;
 }
